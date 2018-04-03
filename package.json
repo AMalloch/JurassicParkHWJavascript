@@ -1,7 +1,6 @@
 {
   "name": "jurassicparkhw",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "mocha specs"
@@ -10,5 +9,14 @@
   "license": "ISC",
   "devDependencies": {
     "mocha": "^5.0.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AMalloch/JurassicParkHWJavascript.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AMalloch/JurassicParkHWJavascript/issues"
+  },
+  "homepage": "https://github.com/AMalloch/JurassicParkHWJavascript#readme",
+  "description": ""
 }
