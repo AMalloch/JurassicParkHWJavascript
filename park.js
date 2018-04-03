@@ -32,24 +32,23 @@ var my_array = ['a', 'b', 'c'];
         });
 
 Park.prototype.numberOfOffspringOneYear = function () {
-  total = 0;
+  offspringTotal = 0;
   for(var i=0; i<this.enclosure.length; i++){
-      total += this.enclosure[i].offspring_per_year;
-  } return total;
+      offspringTotal += this.enclosure[i].offspring_per_year;
+  } return offspringTotal;
 };
 
 Park.prototype.numberOfDinosaursAfterOneYear = function () {
-    let offspringOneYear = total;
-    numberOfDinosaursAfterOneYear = offspringOneYear + this.enclosure.length
-    return numberOfDinosaursAfterOneYear;
+  let offspringOneYear = offspringTotal;
+  let numberOfDinosaursAfterOneYear = offspringOneYear + this.enclosure.length
+  return numberOfDinosaursAfterOneYear;
 };
 
-// Park.prototype.numberOfDinosaursAfterTwoYears = function () {
-//   let oneYearCount = numberOfDinosaursAfterOneYear;
-//   for(var dinosaur of this.enclosure){
-//     twoYearCount = ( oneYearCount * dinosaur.offspring_per_year) + oneYearCount;
-//     return twoYearCount;
-//   }
-// };
+Park.prototype.numberOfDinosaursAfterTwoYears = function (amountOfYears) {
+  let offspringAfterTwoYears = offspringTotal * offspringTotal //64
+  let numberOfParentDinosaursAfterTwoYears = offspringTotal + this.enclosure.length // 9
+  let dinosaurTotal = offspringAfterTwoYears + numberOfParentDinosaursAfterTwoYears; // 73
+  return dinosaurTotal; //73
+};
 
 module.exports = Park;
