@@ -6,7 +6,12 @@ describe('Park', function () {
   var dinosaur;
 
   beforeEach(function () {
-    dinosaur = new Item({ name: 'Deinocheirus', offspring_per_year: 2});
+    dinosaur = new Dinosaur({ type: 'Deinocheirus', offspring_per_year: 2});
   });
+
+  // dinosaur has a type
+  it('dinosaur has a type', function () {
+    assert.strictEqual(dinosaur.type, 'Deinocheirus')
+  })
 
 });
