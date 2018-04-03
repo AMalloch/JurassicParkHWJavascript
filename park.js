@@ -17,7 +17,13 @@ Park.prototype.dinosaursWithOffspringPerYearGreaterThanTwo = function () {
       this.OffspringPerYearGreaterThanTwo.push(dinosaur);
     }
   }
+};
 
+Park.prototype.numberOfDinosaursAfterOneYear = function () {
+  for(var dinosaur of this.enclosure){
+    numberOfDinosaursAfterOneYear = this.enclosure.length += dinosaur.offspring_per_year;
+    return numberOfDinosaursAfterOneYear;
+  }
 };
 
 module.exports = Park;

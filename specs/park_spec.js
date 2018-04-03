@@ -32,6 +32,7 @@ describe('Park', function () {
     park.removeDinosaur();
     assert.strictEqual(park.enclosure.length, 2)
   })
+
   // should get all the dinosaurs with an offspring count of more than 2
   it('can get dinosaurs with offspring count greater than 2', function(){
     park.addDinosaur(dinosaur1);
@@ -40,4 +41,12 @@ describe('Park', function () {
     park.dinosaursWithOffspringPerYearGreaterThanTwo();
     assert.strictEqual(park.OffspringPerYearGreaterThanTwo.length, 2)
   })
+
+  // should be able to calculate number of dinosaurs after year one,
+  // starting with 1 dinosaur assuming entire brood survives
+  it('calculate number of dinosaurs after year one', function(){
+    park.addDinosaur(dinosaur1);
+    assert.strictEqual(park.numberOfDinosaursAfterOneYear(), 9)
+  })
+
 });
