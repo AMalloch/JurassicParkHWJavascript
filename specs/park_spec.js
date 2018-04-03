@@ -49,4 +49,10 @@ describe('Park', function () {
     assert.strictEqual(park.numberOfDinosaursAfterOneYear(), 9)
   })
 
+  // calculate number of dinosaurs after two years
+  it('calculate number of dinosaurs after two years', function(){
+    park.addDinosaur(dinosaur1);
+    assert.strictEqual(park.numberOfDinosaursAfterTwoYears(), 81)
+  })
+
 });

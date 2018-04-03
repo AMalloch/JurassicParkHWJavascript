@@ -26,4 +26,13 @@ Park.prototype.numberOfDinosaursAfterOneYear = function () {
   }
 };
 
+
+Park.prototype.numberOfDinosaursAfterTwoYears = function () {
+  let oneYearCount = numberOfDinosaursAfterOneYear;
+  for(var dinosaur of this.enclosure){
+    twoYearCount = ( oneYearCount * dinosaur.offspring_per_year) + oneYearCount;
+    return twoYearCount;
+  }
+};
+
 module.exports = Park;
