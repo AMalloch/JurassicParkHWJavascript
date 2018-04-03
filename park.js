@@ -19,18 +19,6 @@ Park.prototype.dinosaursWithOffspringPerYearGreaterThanTwo = function () {
   }
 };
 
-var my_array = ['a', 'b', 'c'];
-
-        for (var i=0; i<my_array.length; i++) {
-            console.log(my_array[i]);
-            //a b c
-        }
-
-        my_array.forEach(function(current_value) {
-            console.log(current_value);
-            //a b c
-        });
-
 Park.prototype.numberOfOffspringOneYear = function () {
   offspringTotal = 0;
   for(var i=0; i<this.enclosure.length; i++){
@@ -44,11 +32,12 @@ Park.prototype.numberOfDinosaursAfterOneYear = function () {
   return numberOfDinosaursAfterOneYear;
 };
 
-Park.prototype.numberOfDinosaursAfterTwoYears = function (amountOfYears) {
-  let offspringAfterTwoYears = offspringTotal * offspringTotal //64
-  let numberOfParentDinosaursAfterTwoYears = offspringTotal + this.enclosure.length // 9
-  let dinosaurTotal = offspringAfterTwoYears + numberOfParentDinosaursAfterTwoYears; // 73
-  return dinosaurTotal; //73
+Park.prototype.numberOfDinosaursAfterTwoYears = function (offspringPerSpecies) {
+  let offspringAfterTwoYears = offspringTotal * offspringPerSpecies //64 //128
+  let numberOfParentDinosaursAfterTwoYears = offspringTotal + offspringTotal/8 // 9 //18
+  let dinosaurTotal = offspringAfterTwoYears + numberOfParentDinosaursAfterTwoYears; // 73 //146
+                        // 128                   // 18
+  return dinosaurTotal; //73 //146
 };
 
 module.exports = Park;

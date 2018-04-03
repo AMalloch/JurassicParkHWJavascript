@@ -59,14 +59,15 @@ describe('Park', function () {
   // calculate number of dinosaurs after two years
   it('calculate number of dinosaurs after two years', function(){
     park.addDinosaur(dinosaur1);
-    assert.strictEqual(park.numberOfDinosaursAfterTwoYears(), 73)
+    assert.strictEqual(park.numberOfDinosaursAfterTwoYears(dinosaur1.offspring_per_year), 73)
   })
 
-  // // calculate number of two dinosaurs after two years
-  // it('calculate number of dinosaurs after two years', function(){
-  //   park.addDinosaur(dinosaur1);
-  //   park.addDinosaur(dinosaur1);
-  //   assert.strictEqual(park.numberOfDinosaursAfterTwoYears(), 162)
-  // })
+  // calculate number of two dinosaurs after two years
+  it('calculate population from two dinosaurs after two years', function(){
+    park.addDinosaur(dinosaur1);
+    park.addDinosaur(dinosaur1);
+    park.numberOfOffspringOneYear();
+    assert.strictEqual(park.numberOfDinosaursAfterTwoYears(dinosaur1.offspring_per_year), 146)
+  })
 
 });
