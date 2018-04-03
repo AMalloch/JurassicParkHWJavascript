@@ -38,21 +38,11 @@ Park.prototype.numberOfOffspringOneYear = function () {
   } return total;
 };
 
-// Park.prototype.numberOfDinosaursAfterOneYear = function () {
-//   for(var i=0; i<this.enclosure.length; i++){
-//       let numberOfOffspringOneYear = this.enclosure[i].offspring_per_year;
-//   }
-//     let parentDinosaurs = this.enclosure.length
-//     let numberOfDinosaursAfterOneYear = numberOfOffspringOneYear + parentDinosaurs;
-//     return numberOfDinosaursAfterOneYear;
-// };
-
-  //  dinosaur in this.enclosure){
-  //   let numberOfOffspringOneYear = dinosaur.offspring_per_year;
-  //   let parentDinosaur = this.enclosure.length
-  //   let numberOfDinosaursAfterOneYear = numberOfOffspringOneYear + parentDinosaur;
-  //   return numberOfDinosaursAfterOneYear
-  // }
+Park.prototype.numberOfDinosaursAfterOneYear = function () {
+    let offspringOneYear = total;
+    numberOfDinosaursAfterOneYear = offspringOneYear + this.enclosure.length
+    return numberOfDinosaursAfterOneYear;
+};
 
 // Park.prototype.numberOfDinosaursAfterTwoYears = function () {
 //   let oneYearCount = numberOfDinosaursAfterOneYear;

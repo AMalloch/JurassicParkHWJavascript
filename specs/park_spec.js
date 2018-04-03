@@ -42,19 +42,20 @@ describe('Park', function () {
     assert.strictEqual(park.OffspringPerYearGreaterThanTwo.length, 2)
   })
 
-  // should be able to calculate number of dinosaurs after year one,
-  // starting with 1 dinosaur assuming entire brood survives
-  // it('calculate number of dinosaurs after year one', function(){
-  //   park.addDinosaur(dinosaur1);
-  //   park.addDinosaur(dinosaur1);
-  //   assert.strictEqual(park.numberOfDinosaursAfterOneYear(), 18)
-  // })
-
   // number of offspring_per_year
   it('calculate number of offspring after year one', function(){
     park.addDinosaur(dinosaur1);
     park.addDinosaur(dinosaur1);
     assert.strictEqual(park.numberOfOffspringOneYear(), 16)
+  })
+
+  // should be able to calculate number of dinosaurs after year one,
+  // starting with 1 dinosaur assuming entire brood survives
+  it('calculate number of dinosaurs after year one', function(){
+    park.addDinosaur(dinosaur1);
+    park.addDinosaur(dinosaur1);
+    park.numberOfOffspringOneYear();
+    assert.strictEqual(park.numberOfDinosaursAfterOneYear(), 18)
   })
 
   // calculate number of dinosaurs after two years
