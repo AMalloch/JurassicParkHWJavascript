@@ -10,6 +10,7 @@ describe('Park', function () {
   beforeEach(function () {
     park = new Park();
     dinosaur1 = new Dinosaur({ type: 'Parasaurolophus', offspring_per_year: 8});
+    dinosaur2 = new Dinosaur({ type: 'Quetzalcoatlus', offspring_per_year: 1});
   });
 
   // enclosure should start empty
@@ -32,5 +33,11 @@ describe('Park', function () {
     assert.strictEqual(park.enclosure.length, 2)
   })
   // should get all the dinosaurs with an offspring count of more than 2
-
+  it('can get dinosaurs with offspring count greater than 2', function(){
+    park.addDinosaur(dinosaur1);
+    park.addDinosaur(dinosaur1);
+    park.addDinosaur(dinosaur2);
+    park.dinosaursWithOffspringPerYearGreaterThanTwo();
+    assert.strictEqual(park.OffspringPerYearGreaterThanTwo.length, 2)
+  })
 });
