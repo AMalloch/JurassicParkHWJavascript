@@ -24,6 +24,13 @@ describe('Park', function () {
   })
 
   // should be able to remove all dinosaurs of a particular type
+  it('can add dinosaur to enclosure', function(){
+    park.addDinosaur(dinosaur1);
+    park.addDinosaur(dinosaur1);
+    park.addDinosaur(dinosaur1);
+    park.removeDinosaur();
+    assert.strictEqual(park.enclosure.length, 2)
+  })
   // should get all the dinosaurs with an offspring count of more than 2
 
 });
