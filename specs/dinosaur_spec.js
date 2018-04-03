@@ -14,4 +14,9 @@ describe('Park', function () {
     assert.strictEqual(dinosaur.type, 'Deinocheirus')
   })
 
+  // dinosaur has offspring_per_year
+  it('dinosaur has offspring per year', function () {
+    assert.strictEqual(dinosaur.offspring_per_year, 2)
+  })
+
 });
