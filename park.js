@@ -20,21 +20,28 @@ Park.prototype.dinosaursWithOffspringPerYearGreaterThanTwo = function () {
 };
 
 Park.prototype.numberOfOffspringOneYear = function () {
-  offspringTotal = 0;
+  offspringTotalOneYear = 0;
   for(var i=0; i<this.enclosure.length; i++){
-      offspringTotal += this.enclosure[i].offspring_per_year;
-  } return offspringTotal;
+      offspringTotalOneYear += this.enclosure[i].offspring_per_year;
+  } return offspringTotalOneYear;
+};
+
+Park.prototype.averageOffspringPerEnclosure = function () {
+  let sum = 0;
+  let len = this.enclosure.length;
+  for (i = 0; i < len; i++) {
+      sum += this.enclosure[i].offspring_per_year;
+  } return averageOffspringPerEnclosure = sum / len;
 };
 
 Park.prototype.numberOfDinosaursAfterOneYear = function () {
-  let offspringOneYear = offspringTotal;
-  let numberOfDinosaursAfterOneYear = offspringOneYear + this.enclosure.length
+  let numberOfDinosaursAfterOneYear = this.numberOfOffspringOneYear() + this.enclosure.length
   return numberOfDinosaursAfterOneYear;
 };
 
-Park.prototype.numberOfDinosaursAfterTwoYears = function (offspringPerSpecies) {
-  let offspringAfterTwoYears = offspringTotal * offspringPerSpecies //64 //128
-  let numberOfParentDinosaursAfterTwoYears = offspringTotal + offspringTotal/8 // 9 //18
+Park.prototype.numberOfDinosaursAfterTwoYears = function () {
+  let offspringAfterTwoYears = this.numberOfOffspringOneYear() * this.averageOffspringPerEnclosure(); //64 //128
+  let numberOfParentDinosaursAfterTwoYears = this.numberOfOffspringOneYear() +  this.numberOfOffspringOneYear()/this.averageOffspringPerEnclosure(); // 9 //18
   let dinosaurTotal = offspringAfterTwoYears + numberOfParentDinosaursAfterTwoYears; // 73 //146
                         // 128                   // 18
   return dinosaurTotal; //73 //146
